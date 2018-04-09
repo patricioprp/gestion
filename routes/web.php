@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('provinces','ProvinceController');
+Route::get('locations/{id}','ProvinceController@getlocations');
