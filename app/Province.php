@@ -10,6 +10,9 @@ class Province extends Model
   protected $fillable = ['name'];
   public function locations(){
   //relacion uno a muchos
-  return $this->hasMany('\App\Location'); 
+  return $this->hasMany('\App\Location');
+}
+public function nation(){
+return $this->belongsTo('\App\Nation');
 }
 }
