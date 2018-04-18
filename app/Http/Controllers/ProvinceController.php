@@ -20,6 +20,7 @@ class ProvinceController extends Controller
       $nacion = Nation::pluck('name','id');
 
         return view('index')->with('provinces',$provinces)->with('nacion',$nacion);
+      //  return view('index')->with('provinces',$provinces);
     }
 
     public function getlocations(Request $request, $id)
