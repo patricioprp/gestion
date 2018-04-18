@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Province extends Model
 {
   protected $table = 'provinces';
-  protected $fillable = ['name'];
+  protected $fillable = ['name', 'nation_id'];
   public function locations(){
   //relacion uno a muchos
   return $this->hasMany('\App\Location');

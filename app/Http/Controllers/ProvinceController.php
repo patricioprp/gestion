@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Nation;
 use App\Province;
 use App\Location;
 use Illuminate\Http\Request;
@@ -16,7 +17,9 @@ class ProvinceController extends Controller
     public function index()
     {
       $provinces = Province::pluck('name','id');
-        return view('index')->with('provinces',$provinces);
+      $nacion = Nation::pluck('name','id');
+
+        return view('index')->with('provinces',$provinces)->with('nacion',$nacion);
     }
 
     public function getlocations(Request $request, $id)

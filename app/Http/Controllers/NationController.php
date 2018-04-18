@@ -6,7 +6,7 @@ use App\Province;
 use App\Nation;
 use Illuminate\Http\Request;
 
-class ProvincesController extends Controller
+class NationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,9 @@ class ProvincesController extends Controller
      */
     public function index()
     {
-      $nations =Nation::pluck('name','id');
-        return view('index')->with('nations',$nations);
+      $nacion = Nation::pluck('name','id');
+      $provinces = Province::pluck('name','id');
+        return view('index')->with('nacion',$nacion)->with('provinces',$provinces);
     }
 
     /**
