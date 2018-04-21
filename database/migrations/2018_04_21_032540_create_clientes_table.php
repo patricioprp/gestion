@@ -20,6 +20,9 @@ class CreateClientesTable extends Migration
             $table->string('nombre');
             $table->string('telefono');
             $table->enum('estado',['optimo','refinanciado','moroso']);
+
+            $table->integer('domicilio_id')->unsigned();
+            $table->foreign('domicilio_id')->references('id')->on('domicilios');
             $table->timestamps();
         });
     }
