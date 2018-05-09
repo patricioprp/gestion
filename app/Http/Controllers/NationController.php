@@ -87,8 +87,10 @@ class NationController extends Controller
     }
     public function getprovinces(Request $request, $id)
     {
+        dd($id);
       if($request->ajax()){
         $provinces = Province::provinces($id);
+        dd($provinces);
         return response()->json($provinces);
       }
 
